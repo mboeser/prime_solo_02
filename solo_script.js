@@ -1,10 +1,30 @@
 // ! ! !
 // Three Bugs
 
-var arrayAtticus = ["Atticus", "2405", "47000", 3];
-var arrayJem = ["Jem", "62347", "63500", 4];
-var arrayBoo = ["Boo", "11435", "54000", 3];
-var arrayScout = ["Scout", "6243", "74750", 5];
+var arrayAtticus = {
+  name: "Atticus", 
+  number: "2405", 
+  salaryOject: "47000", 
+  score: 3
+};
+var arrayJem = {
+  name: "Jem", 
+  number: "62347", 
+  salaryOject: "63500", 
+  score: 4
+};
+var arrayBoo = {
+  name: "Boo", 
+  number: "11435", 
+  salaryOject: "54000", 
+  score: 3
+};
+var arrayScout = {
+  name: "Scout", 
+  number: "6243", 
+  salaryOject: "74750", 
+  score: 5
+};
 
 var array = [arrayAtticus, arrayJem, arrayBoo, arrayScout];
 
@@ -18,6 +38,7 @@ position = document.getElementById('content');
 for(var i = 0; i < array.length; i++){
 	// add [i] to array
   array[i] = calculateSTI(array[i]);
+  console.log(array);
  	newEl = document.createElement('li');
 	newText = document.createTextNode(array[i]);
 	newEl.appendChild(newText);
@@ -27,16 +48,19 @@ for(var i = 0; i < array.length; i++){
 function calculateSTI(array){
   var newArray = [];
 
-  newArray[0] = array[0];
+  console.log(newArray[0] = array.name);
 
-  var employeeNumber = array[1];
-  var baseSalary = array[2];
-  var reviewScore = array[3];
-
+  var employeeNumber = array.number;
+  console.log(employeeNumber);
+  var baseSalary = array.salaryOject;
+  console.log(baseSalary);
+  var reviewScore = array.score;
+console.log(reviewScore);
   var bonus = getBaseSTI(reviewScore) + getYearAdjustment(employeeNumber) - getIncomeAdjustment(baseSalary);
   if(bonus > 0.13){
     bonus = 0.13;
   }
+  console.log(bonus);
   // added paresInt to lines 42 & 43
   newArray[1] = bonus * 100;
   newArray[2] = parseInt(baseSalary * (1.0 + bonus));

@@ -1,7 +1,14 @@
 // ! ! !
 // Three Bugs
 
-var arrayAtticus = {
+function Employee (name, number, salaryOject, score){
+  this.name = name;
+  this.number = number;
+  this.salaryOject = salaryOject;
+  this.score = score;
+}
+
+/*var arrayAtticus = {
   name: "Atticus", 
   number: "2405", 
   salaryOject: "47000", 
@@ -24,9 +31,15 @@ var arrayScout = {
   number: "6243", 
   salaryOject: "74750", 
   score: 5
-};
+};*/
+var arrayAtticus = new Employee ("Atticus", "2405", "47000", 3);
+var arrayJem = new Employee ("Jem", "62347", "63500", 4);
+var arrayBoo = new Employee ("Boo", "11435", "54000", 3);
+var arrayScout = new Employee ("Scout", "6243", "74750", 5);
+var mike = new Employee('Mike', '1234', '12345', 5);
 
-var array = [arrayAtticus, arrayJem, arrayBoo, arrayScout];
+console.log(mike)
+var array = [arrayAtticus, arrayJem, arrayBoo, arrayScout, mike];
 
 //Create variables used to write to the DOM
 var newEl, newText, position;
